@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewBinder"
+            type="com.png.interview.weather.ui.binder.ForecastFragmentViewBinder" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+        <include
+            layout="@layout/view_forecast_available"
+            android:id="@+id/view_forecast_available"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            app:viewData="@{viewBinder.forecastViewData}"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <include
+            layout="@layout/view_forecast_loading"
+            android:id="@+id/view_forecast_loading"
+            android:layout_height="200dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            app:emptyVisible="@{viewBinder.isEmpty}"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            layout="@layout/view_current_weather_error"
+            android:id="@+id/view_forecast_error"
+            android:layout_height="200dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            app:errorVisible="@{viewBinder.isError}"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_rounded_bg"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp">
+        <TextView
+            style="@style/ForecastTextViewLabelStyle"
+            android:id="@+id/tv_date_label"
+            android:text="@string/date"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            style="@style/ForecastTextViewValueStyle"
+            android:id="@+id/tv_date_value"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/tv_date_label"
+            app:layout_constraintTop_toTopOf="@id/tv_date_label"
+            app:layout_constraintBottom_toBottomOf="@id/tv_date_label"
+            tools:text="2021-08-05" />
+
+        <TextView
+            style="@style/ForecastTextViewLabelStyle"
+            android:id="@+id/tv_min_temp_label"
+            android:text="@string/min_temp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_date_label"/>
+
+        <TextView
+            style="@style/ForecastTextViewValueStyle"
+            android:id="@+id/tv_min_temp_value"
+            app:layout_constraintStart_toEndOf="@id/tv_min_temp_label"
+            app:layout_constraintTop_toTopOf="@id/tv_min_temp_label"
+            app:layout_constraintBottom_toBottomOf="@id/tv_min_temp_label"
+            tools:text="78.2F"/>
+
+        <TextView
+            style="@style/ForecastTextViewLabelStyle"
+            android:id="@+id/tv_max_temp_label"
+            android:text="@string/max_temp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_min_temp_label"/>
+
+        <TextView
+            style="@style/ForecastTextViewValueStyle"
+            android:id="@+id/tv_max_temp_value"
+            app:layout_constraintStart_toEndOf="@id/tv_max_temp_label"
+            app:layout_constraintTop_toTopOf="@id/tv_max_temp_label"
+            app:layout_constraintBottom_toBottomOf="@id/tv_max_temp_label"
+            tools:text="92.5F"/>
+
+        <TextView
+            style="@style/ForecastTextViewLabelStyle"
+            android:id="@+id/tv_wind_label"
+            android:text="@string/wind_speed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_max_temp_label"/>
+
+        <TextView
+            style="@style/ForecastTextViewValueStyle"
+            android:id="@+id/tv_wind_value"
+            app:layout_constraintStart_toEndOf="@id/tv_wind_label"
+            app:layout_constraintTop_toTopOf="@id/tv_wind_label"
+            app:layout_constraintBottom_toBottomOf="@id/tv_wind_label"
+            tools:text="6.5 MPH"/>
+
+        <TextView
+            style="@style/ForecastTextViewLabelStyle"
+            android:id="@+id/tv_condition"
+            android:text="@string/condition"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_wind_label"/>
+
+        <TextView
+            style="@style/ForecastTextViewValueStyle"
+            android:id="@+id/tv_condition_value"
+            app:layout_constraintStart_toEndOf="@id/tv_condition"
+            app:layout_constraintTop_toTopOf="@id/tv_condition"
+            app:layout_constraintBottom_toBottomOf="@id/tv_condition"
+            tools:text="Partly Cloudy"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
